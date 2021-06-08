@@ -97,7 +97,7 @@ function QueryResultService($resource, $timeout, $q, QueryResultError, Auth) {
             if (isNumber(v)) {
               newType = 'float';
             } else if (isString(v) && v.match(/^\d{4}-\d{2}-\d{2}T/)) {
-              row[k] = moment.utc(v);
+              row[k] = moment(v);
               newType = 'datetime';
             } else if (isString(v) && v.match(/^\d{4}-\d{2}-\d{2}$/)) {
               row[k] = moment.utc(v);
